@@ -56,18 +56,27 @@ export const ProductSearch = (props) => {
 
   return (
     <div className="Products">
-      <ProductFilters
-        minPrice={price.minPrice}
-        maxPrice={price.maxPrice}
-        onPriceChange={onPriceChange} />
+      <aside className="productsFiltersHolder">
+        <ProductFilters
+          minPrice={price.minPrice}
+          maxPrice={price.maxPrice}
+          onPriceChange={onPriceChange}
+          className="productsFilters"
+        />
 
-      <ColumnToggle
-        onToggle={onToggle}
-        toggles={toggles} />
-
-      <ProductTable
-        products={onFilter(products)}
-        columns={toggles} />
+        <ColumnToggle
+          onToggle={onToggle}
+          toggles={toggles}
+          className="productsColumn"
+        />
+      </aside>
+      <section className="productsTableHolder">
+        <ProductTable
+          products={onFilter(products)}
+          columns={toggles}
+          className="productsTable"
+        />
+      </section>
     </div>
   );
 }

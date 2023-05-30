@@ -1,11 +1,27 @@
 .Products {
-  display: flex;
+  display: grid;
+  grid-template-areas: "filters tableItems";
+  grid-template-rows: auto;
+  grid-template-columns: 3fr 9fr;
+}
+
+.productsFiltersHolder{
+  grid-area: filters;
+  background-color: #f2f2f2;
+}
+
+.productsTableHolder{
+  grid-area: tableItems;
+  background-color: #fafafa;
+}
+
+.Products .productsFiltersHolder, .Products .productsTableHolder{
+  padding: 2rem;
 }
 
 #product-table {
   display: flex;
   flex-direction: column;
-  width: 50%;
 }
 
 input[type=text], input[type=number], select {
@@ -31,12 +47,6 @@ input[type=submit] {
 
 input[type=submit]:hover {
   background-color: #72bcd4;
-}
-
-div {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
 }
 
 ul {
@@ -72,4 +82,34 @@ table {
 
 th, td {
   padding: 15px;
+}
+
+/* 
+  =toggle-columns 
+  Needs to be refactored 
+  it should be moved to columnTooggle.js 
+*/
+.toggle-columns{
+  width: 100%;
+}
+
+.toggle{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  box-sizing: border-box;
+
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+
+  border-radius: 0.5rem;
+  border: 0.5px solid #cacaca;
+}
+
+.toggle > label{
+  flex-grow: 3;
+}
+
+.toggle > input{
+  margin-right: auto;
 }

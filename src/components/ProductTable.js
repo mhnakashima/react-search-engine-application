@@ -36,7 +36,7 @@ export const ProductTable = (props) => {
   return (
     <div id="product-table">
       <header>
-        <strong>Products ({products.length} items)</strong>
+        <h3>Products ({products.length} items)</h3>
       </header>
       <table>
         <thead>
